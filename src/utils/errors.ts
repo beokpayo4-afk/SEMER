@@ -8,7 +8,10 @@ function validationMessage(detail: unknown) {
     if (!item || typeof item !== "object" || !("msg" in item) || typeof item.msg !== "string") {
       return [];
     }
-    const loc = "loc" in item && Array.isArray(item.loc) ? item.loc.filter((part) => part !== "body").join(" ") : "";
+    const loc =
+      "loc" in item && Array.isArray(item.loc)
+        ? item.loc.filter((part: unknown) => part !== "body").join(" ")
+        : "";
     const text = item.msg.replace(/^Value error,\s*/i, "");
     return [loc ? `${loc}: ${text}` : text];
   });
