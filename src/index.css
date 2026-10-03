@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Segoe UI", sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --color-ink: #1c1917;
+  --color-paper: #f6f3ee;
+  --color-wine: #7c2d3a;
+  --color-wine-dark: #5c1f2b;
+  --color-sand: #efe8dc;
+  --color-line: #e4dcd0;
+  --color-muted: #6b6259;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.hero-drift {
+  animation: hero-drift 8s ease-in-out infinite alternate;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.home-open > * {
+  animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.home-open > *:nth-child(1) { animation-delay: 0s; }
+.home-open > *:nth-child(2) { animation-delay: 0.15s; }
+.home-open > *:nth-child(3) { animation-delay: 0.35s; }
+.home-open > *:nth-child(4) { animation-delay: 0.55s; }
+.home-open > *:nth-child(5) { animation-delay: 0.8s; }
+.home-open > *:nth-child(6) { animation-delay: 1.05s; }
+.home-open > *:nth-child(7) { animation-delay: 1.3s; }
+.home-open > *:nth-child(8) { animation-delay: 1.5s; }
+
+.card-rise {
+  animation: rise-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-drift,
+  .home-open > *,
+  .card-rise {
+    animation: none;
+  }
+}

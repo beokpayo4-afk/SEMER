@@ -1,0 +1,1 @@
+export const companyName = "SEMER ECOMMERCE MARKETING PRIVATE LIMITED";
