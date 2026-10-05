@@ -94,6 +94,9 @@ export function OrderPage() {
       <div>
         <p className="text-sm text-muted">{order.order_number}</p>
         <h1 className="mt-2 text-4xl sm:text-5xl">Order</h1>
+        <Link to="/product-refund-return-policy" className="mt-3 inline-block text-sm text-wine">
+          Refund / Return Policy
+        </Link>
         <p className="mt-3 text-sm text-muted">
           {orderStatusLabel(order.status)} · Payment {paymentStatusLabel(order.payment_status)} ·{" "}
           {paymentMethodLabel(order.payment_method)}

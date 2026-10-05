@@ -5,59 +5,6 @@ export type ServiceOffer = {
   details: string[];
 };
 
-export const travelOffers: ServiceOffer[] = [
-  {
-    slug: "domestic",
-    title: "Domestic trips",
-    summary: "City breaks and regional journeys across India, planned around the way you like to travel.",
-    details: [
-      "Routes within India, from short city stays to longer circuits.",
-      "Hotels, transfers, and day plans arranged as one itinerary.",
-      "Tell us the cities, dates, and pace. We reply with a quote.",
-    ],
-  },
-  {
-    slug: "international",
-    title: "International trips",
-    summary: "Outbound travel with flights, stays, and a day-by-day plan built for your group.",
-    details: [
-      "Destinations outside India, including multi-city routes.",
-      "Guidance on documents and a schedule you can actually follow.",
-      "Pricing starts from a package and is confirmed after your enquiry.",
-    ],
-  },
-  {
-    slug: "holiday-packages",
-    title: "Holiday packages",
-    summary: "Ready holiday shapes for families and groups, with room to adjust nights and hotels.",
-    details: [
-      "A published duration, destination, and starting price.",
-      "Inclusions and exclusions set out before you commit.",
-      "Seats and dates are confirmed when the quote is accepted.",
-    ],
-  },
-  {
-    slug: "honeymoon-packages",
-    title: "Honeymoon packages",
-    summary: "Trips arranged for two, with stays and a pace set around the couple.",
-    details: [
-      "Destinations and nights planned for two travellers.",
-      "Stays, transfers, and a day plan set out in the quote.",
-      "Dates and budget are confirmed after the enquiry.",
-    ],
-  },
-  {
-    slug: "customized",
-    title: "Customized trips",
-    summary: "A trip drawn around your dates, budget, and the people travelling with you.",
-    details: [
-      "No fixed departure. The itinerary is written for this journey.",
-      "Share travellers, preferred dates, and a budget range.",
-      "We respond with a proposal before any booking is made.",
-    ],
-  },
-];
-
 export const eventOffers: ServiceOffer[] = [
   {
     slug: "weddings",

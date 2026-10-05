@@ -98,8 +98,8 @@ export function Hero() {
             Discover Beauty, Fashion &amp; Lifestyle
           </h1>
           <p className="mt-5 max-w-md text-base leading-7 text-muted">
-            Shop beauty and personal care, fashion, and lifestyle goods. Travel and events are planned from an enquiry
-            and confirmed with a quote.
+            Shop beauty and personal care, fashion, and lifestyle goods. Events are planned from an enquiry and
+            confirmed with a quote.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link

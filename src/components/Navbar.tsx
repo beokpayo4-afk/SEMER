@@ -6,11 +6,10 @@ import { CartIcon } from "./CartIcon.tsx";
 import { SearchBar } from "./SearchBar.tsx";
 
 const links = [
-  { to: "/shop", label: "Shop" },
-  { to: "/travel", label: "Travel" },
-  { to: "/events", label: "Events" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
+  { to: "/shop", label: "Shop", children: [] as { to: string; label: string }[] },
+  { to: "/events", label: "Events", children: [] },
+  { to: "/about", label: "About", children: [] },
+  { to: "/contact", label: "Contact", children: [] },
 ];
 
 function linkClass({ isActive }: { isActive: boolean }) {
@@ -36,8 +35,6 @@ export function Navbar() {
         <div className="mx-auto flex max-w-7xl items-center justify-center gap-6 overflow-x-auto px-4 py-2 text-[11px] tracking-wide whitespace-nowrap sm:text-xs">
           <span>Beauty, fashion, and lifestyle</span>
           <span className="text-paper/50">·</span>
-          <span>Travel is quoted before booking</span>
-          <span className="text-paper/50">·</span>
           <span>Events are quoted before booking</span>
         </div>
       </div>
@@ -46,11 +43,32 @@ export function Navbar() {
           SEMER
         </Link>
         <nav className="hidden items-center gap-5 lg:flex">
-          {links.map((link) => (
-            <NavLink key={link.to} to={link.to} className={linkClass}>
-              {link.label}
-            </NavLink>
-          ))}
+          {links.map((link) =>
+            link.children.length > 0 ? (
+              <div key={link.to} className="group relative">
+                <NavLink to={link.to} className={linkClass}>
+                  {link.label}
+                </NavLink>
+                <div className="invisible absolute top-full left-0 z-50 pt-2 group-focus-within:visible group-hover:visible">
+                  <div className="min-w-48 rounded-2xl border border-line bg-white p-2">
+                    {link.children.map((child) => (
+                      <NavLink
+                        key={child.to}
+                        to={child.to}
+                        className="block rounded-xl px-3 py-2 text-sm text-ink hover:bg-sand"
+                      >
+                        {child.label}
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <NavLink key={link.to} to={link.to} className={linkClass}>
+                {link.label}
+              </NavLink>
+            ),
+          )}
         </nav>
         <div className="ml-auto hidden w-72 md:block">
           <SearchBar value={query} onChange={setQuery} onSubmit={search} />
@@ -103,9 +121,21 @@ export function Navbar() {
           <SearchBar value={query} onChange={setQuery} onSubmit={search} className="md:hidden" />
           <nav className="mt-4 flex flex-col gap-3">
             {links.map((link) => (
-              <NavLink key={link.to} to={link.to} className={linkClass} onClick={() => setOpen(false)}>
-                {link.label}
-              </NavLink>
+              <div key={link.to} className="flex flex-col gap-2">
+                <NavLink to={link.to} className={linkClass} onClick={() => setOpen(false)}>
+                  {link.label}
+                </NavLink>
+                {link.children.map((child) => (
+                  <NavLink
+                    key={child.to}
+                    to={child.to}
+                    className="pl-3 text-sm text-muted"
+                    onClick={() => setOpen(false)}
+                  >
+                    {child.label}
+                  </NavLink>
+                ))}
+              </div>
             ))}
             {user?.role === "ADMIN" ? (
               <Link to="/admin" className="text-sm sm:hidden" onClick={() => setOpen(false)}>

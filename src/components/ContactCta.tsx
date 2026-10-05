@@ -7,7 +7,7 @@ export function ContactCta() {
         <div>
           <h2 className="text-3xl text-paper sm:text-4xl">Get in touch</h2>
           <p className="mt-3 max-w-xl text-sm leading-6 text-paper/80 sm:text-base">
-            Ask about a product, a trip, or an event. Send the details from the contact page and the team can reply.
+            Ask about a product or an event. Send the details from the contact page and the team can reply.
           </p>
         </div>
         <Link

@@ -26,7 +26,7 @@ export function ContactPage() {
         <p className="text-xs tracking-[0.18em] text-muted uppercase">Contact</p>
         <h1 className="mt-3 text-4xl sm:text-5xl">Write to the team.</h1>
         <p className="mt-4 max-w-md leading-7 text-muted">
-          Use this for catalogue questions, trip enquiries, and event briefs. Delivery starts when the contact
+          Use this for catalogue questions and event briefs. Delivery starts when the contact
           endpoint is available.
         </p>
       </div>

@@ -1,7 +1,7 @@
 const points = [
   {
     title: "Products and services together",
-    text: "Browse the catalogue, then ask about a trip or an event from the same site.",
+    text: "Browse the catalogue, then ask about an event from the same site.",
   },
   {
     title: "Prices from the catalogue",
@@ -9,7 +9,7 @@ const points = [
   },
   {
     title: "Quotes before bookings",
-    text: "Travel and events are planned from an enquiry and confirmed with a quote.",
+    text: "Events are planned from an enquiry and confirmed with a quote.",
   },
   {
     title: "An account for orders",

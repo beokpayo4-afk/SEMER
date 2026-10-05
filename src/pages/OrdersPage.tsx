@@ -57,6 +57,9 @@ export function OrdersPage() {
       <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
         <h1 className="text-4xl">Orders</h1>
         <p className="mt-4 text-muted">Sign in to see orders for your account.</p>
+        <Link to="/product-refund-return-policy" className="mt-4 inline-block text-sm text-wine">
+          Refund / Return Policy
+        </Link>
         <Link to="/login" state={{ from: "/orders" }} className="mt-4 inline-block text-wine">
           Sign in
         </Link>
@@ -67,6 +70,9 @@ export function OrdersPage() {
   return (
     <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
       <h1 className="text-4xl sm:text-5xl">Orders</h1>
+      <Link to="/product-refund-return-policy" className="mt-3 inline-block text-sm text-wine">
+        Refund / Return Policy
+      </Link>
       {error ? (
         <div className="mt-6">
           <ErrorMessage message={error} />

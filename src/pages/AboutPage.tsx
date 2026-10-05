@@ -14,10 +14,6 @@ export function AboutPage() {
           perfumes, toiletries, clothing, footwear, jewellery, bags, watches, and accessories sit in one catalogue.
         </p>
         <p>
-          Travel covers domestic trips, international trips, holiday packages, and honeymoon packages. Those are
-          quoted and booked separately from the product cart.
-        </p>
-        <p>
           Event work covers weddings, anniversaries, private parties, planning, decoration, and logistics. An event
           starts as an enquiry, then a quote, then a booking.
         </p>

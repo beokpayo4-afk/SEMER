@@ -17,8 +17,6 @@ import { ProductFormPage } from "./pages/admin/ProductFormPage.tsx";
 import { ProductsPage } from "./pages/admin/ProductsPage.tsx";
 import { ReviewsPage } from "./pages/admin/ReviewsPage.tsx";
 import { SettingsPage } from "./pages/admin/SettingsPage.tsx";
-import { TravelAdminPage } from "./pages/admin/TravelAdminPage.tsx";
-import { TravelEnquiriesPage } from "./pages/admin/TravelEnquiriesPage.tsx";
 import { AboutPage } from "./pages/AboutPage.tsx";
 import { CartPage } from "./pages/CartPage.tsx";
 import { CategoryPage } from "./pages/CategoryPage.tsx";
@@ -33,11 +31,9 @@ import { NotFoundPage } from "./pages/NotFoundPage.tsx";
 import { OrderPage } from "./pages/OrderPage.tsx";
 import { OrdersPage } from "./pages/OrdersPage.tsx";
 import { ProductPage } from "./pages/ProductPage.tsx";
+import { ProductRefundReturnPolicyPage } from "./pages/ProductRefundReturnPolicyPage.tsx";
 import { RegisterPage } from "./pages/RegisterPage.tsx";
 import { ShopPage } from "./pages/ShopPage.tsx";
-import { TravelDetailPage } from "./pages/TravelDetailPage.tsx";
-import { TravelEnquiryPage } from "./pages/TravelEnquiryPage.tsx";
-import { TravelPage } from "./pages/TravelPage.tsx";
 
 export default function App() {
   return (
@@ -57,8 +53,6 @@ export default function App() {
                 <Route path="admin/orders" element={<AdminOrdersPage />} />
                 <Route path="admin/customers" element={<CustomersPage />} />
                 <Route path="admin/payments" element={<PaymentsPage />} />
-                <Route path="admin/travel" element={<TravelAdminPage />} />
-                <Route path="admin/travel-enquiries" element={<TravelEnquiriesPage />} />
                 <Route path="admin/events" element={<EventsAdminPage />} />
                 <Route path="admin/event-enquiries" element={<EventEnquiriesPage />} />
                 <Route path="admin/reviews" element={<ReviewsPage />} />
@@ -71,13 +65,11 @@ export default function App() {
                 <Route path="shop" element={<ShopPage />} />
                 <Route path="categories/:id" element={<CategoryPage />} />
                 <Route path="products/:id" element={<ProductPage />} />
-                <Route path="travel" element={<TravelPage />} />
-                <Route path="travel/enquire" element={<TravelEnquiryPage />} />
-                <Route path="travel/:id" element={<TravelDetailPage />} />
                 <Route path="events" element={<EventsPage />} />
                 <Route path="events/enquire" element={<EventEnquiryPage />} />
                 <Route path="events/:id" element={<EventDetailPage />} />
                 <Route path="contact" element={<ContactPage />} />
+                <Route path="product-refund-return-policy" element={<ProductRefundReturnPolicyPage />} />
                 <Route path="login" element={<LoginPage />} />
                 <Route path="register" element={<RegisterPage />} />
                 <Route path="cart" element={<CartPage />} />
