@@ -1,5 +1,6 @@
 import { type FormEvent, useState } from "react";
 import { Button } from "../components/Button.tsx";
+import { MailIcon, PhoneIcon } from "../components/ContactIcons.tsx";
 import { Input } from "../components/Input.tsx";
 import { usePageTitle } from "../hooks/usePageTitle.ts";
 import { useToast } from "../hooks/useToast.ts";
@@ -34,16 +35,18 @@ export function ContactPage() {
           <div>
             <dt className="font-medium">Email</dt>
             <dd className="mt-1">
-              <a href={`mailto:${companyEmail}`} className="break-all text-wine">
-                {companyEmail}
+              <a href={`mailto:${companyEmail}`} className="inline-flex items-start gap-2 break-all text-wine">
+                <MailIcon className="mt-0.5 h-4 w-4 shrink-0" />
+                <span>{companyEmail}</span>
               </a>
             </dd>
           </div>
           <div>
             <dt className="font-medium">Mobile</dt>
             <dd className="mt-1">
-              <a href={companyPhoneHref} className="text-wine">
-                {companyPhone}
+              <a href={companyPhoneHref} className="inline-flex items-center gap-2 text-wine">
+                <PhoneIcon className="h-4 w-4 shrink-0" />
+                <span>{companyPhone}</span>
               </a>
             </dd>
           </div>
