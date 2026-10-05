@@ -9,8 +9,6 @@ import { CategoriesPage as AdminCategoriesPage } from "./pages/admin/CategoriesP
 import { CouponsPage } from "./pages/admin/CouponsPage.tsx";
 import { CustomersPage } from "./pages/admin/CustomersPage.tsx";
 import { DashboardPage } from "./pages/admin/DashboardPage.tsx";
-import { EventEnquiriesPage } from "./pages/admin/EventEnquiriesPage.tsx";
-import { EventsAdminPage } from "./pages/admin/EventsAdminPage.tsx";
 import { OrdersPage as AdminOrdersPage } from "./pages/admin/OrdersPage.tsx";
 import { PaymentsPage } from "./pages/admin/PaymentsPage.tsx";
 import { ProductFormPage } from "./pages/admin/ProductFormPage.tsx";
@@ -22,9 +20,6 @@ import { CartPage } from "./pages/CartPage.tsx";
 import { CategoryPage } from "./pages/CategoryPage.tsx";
 import { CheckoutPage } from "./pages/CheckoutPage.tsx";
 import { ContactPage } from "./pages/ContactPage.tsx";
-import { EventDetailPage } from "./pages/EventDetailPage.tsx";
-import { EventEnquiryPage } from "./pages/EventEnquiryPage.tsx";
-import { EventsPage } from "./pages/EventsPage.tsx";
 import { HomePage } from "./pages/HomePage.tsx";
 import { LoginPage } from "./pages/LoginPage.tsx";
 import { NotFoundPage } from "./pages/NotFoundPage.tsx";
@@ -53,8 +48,6 @@ export default function App() {
                 <Route path="admin/orders" element={<AdminOrdersPage />} />
                 <Route path="admin/customers" element={<CustomersPage />} />
                 <Route path="admin/payments" element={<PaymentsPage />} />
-                <Route path="admin/events" element={<EventsAdminPage />} />
-                <Route path="admin/event-enquiries" element={<EventEnquiriesPage />} />
                 <Route path="admin/reviews" element={<ReviewsPage />} />
                 <Route path="admin/coupons" element={<CouponsPage />} />
                 <Route path="admin/settings" element={<SettingsPage />} />
@@ -65,9 +58,6 @@ export default function App() {
                 <Route path="shop" element={<ShopPage />} />
                 <Route path="categories/:id" element={<CategoryPage />} />
                 <Route path="products/:id" element={<ProductPage />} />
-                <Route path="events" element={<EventsPage />} />
-                <Route path="events/enquire" element={<EventEnquiryPage />} />
-                <Route path="events/:id" element={<EventDetailPage />} />
                 <Route path="contact" element={<ContactPage />} />
                 <Route path="product-refund-return-policy" element={<ProductRefundReturnPolicyPage />} />
                 <Route path="login" element={<LoginPage />} />

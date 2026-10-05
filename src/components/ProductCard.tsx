@@ -38,7 +38,7 @@ export function ProductCard({ product }: { product: Product }) {
     onSale && product.sale_price !== null ? Math.round((1 - product.sale_price / product.price) * 100) : 0;
 
   return (
-    <article className="flex h-full flex-col rounded-3xl border border-line bg-white p-3">
+    <article className="flex h-full flex-col rounded-3xl border border-line bg-white p-3 transition duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(28,25,23,0.08)]">
       <div className="relative">
         {discount > 0 ? (
           <span className="absolute top-3 left-3 z-10 rounded-full bg-wine px-2 py-1 text-xs text-paper">-{discount}%</span>
@@ -51,7 +51,7 @@ export function ProductCard({ product }: { product: Product }) {
             <ProductImage
               src={image?.url}
               alt={image?.alt_text || product.name}
-              className="h-full w-full transition duration-300 group-hover:scale-[1.03]"
+              className="h-full w-full transition duration-700 ease-out group-hover:scale-105"
             />
           </div>
         </Link>

@@ -9,7 +9,7 @@ import { usePageTitle } from "../hooks/usePageTitle.ts";
 import { getOrder, type Order, type OrderAddress } from "../services/orders.ts";
 import { apiErrorMessage } from "../utils/errors.ts";
 import { formatPaise } from "../utils/money.ts";
-import { orderStatusLabel, paymentMethodLabel, paymentStatusLabel, storeUpiId } from "../utils/order.ts";
+import { orderStatusLabel, paymentMethodLabel, paymentStatusLabel } from "../utils/order.ts";
 import { isUuid } from "../utils/product.ts";
 
 export function OrderPage() {
@@ -104,9 +104,7 @@ export function OrderPage() {
         {order.payment_method === "upi" ? (
           <div className="mt-6">
             <UpiQr amountPaise={order.total} />
-            <p className="mt-3 text-sm">
-              Scan to pay {formatPaise(order.total)} to <span className="font-medium">{storeUpiId}</span>
-            </p>
+            <p className="mt-3 text-sm">Scan the QR code to pay {formatPaise(order.total)}.</p>
           </div>
         ) : null}
         <div className="mt-8 grid gap-6 sm:grid-cols-2">

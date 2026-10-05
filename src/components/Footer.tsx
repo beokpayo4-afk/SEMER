@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useCategories } from "../hooks/useCatalog.ts";
 import { findCategory } from "../utils/categories.ts";
-import { companyName } from "../utils/company.ts";
+import { companyEmail, companyName, companyPhone, companyPhoneHref } from "../utils/company.ts";
 
 const departments = ["Beauty & Personal Care", "Fashion", "Lifestyle"];
 
@@ -14,6 +14,12 @@ export function Footer() {
         <div>
           <p className="font-display text-2xl">SEMER</p>
           <p className="mt-3 max-w-xs text-sm leading-6 text-muted">{companyName}</p>
+          <a href={`mailto:${companyEmail}`} className="mt-4 block break-all text-sm text-muted">
+            {companyEmail}
+          </a>
+          <a href={companyPhoneHref} className="mt-2 block text-sm text-muted">
+            {companyPhone}
+          </a>
         </div>
         <div className="text-sm">
           <p className="font-medium">Visit</p>
@@ -28,7 +34,6 @@ export function Footer() {
                 </Link>
               );
             })}
-            <Link to="/events">Events</Link>
             <Link to="/contact">Contact</Link>
             <Link to="/product-refund-return-policy">Product Refund / Return Policy</Link>
           </div>

@@ -49,7 +49,6 @@ export function DashboardPage() {
     ["Total customers", String(dashboard.total_customers)],
     ["Total products", String(dashboard.total_products)],
     ["Low stock products", String(dashboard.low_stock_products)],
-    ["Event enquiries", String(dashboard.event_enquiries)],
   ];
 
   return (

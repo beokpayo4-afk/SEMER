@@ -61,7 +61,8 @@ function HeroSlides() {
   }
 
   return (
-    <div className="relative aspect-4/3 overflow-hidden rounded-4xl bg-sand">
+    <div className="relative">
+    <div className="relative aspect-4/3 overflow-hidden rounded-4xl bg-sand shadow-[0_24px_60px_rgba(28,25,23,0.12)]">
       {slides.map((slide) => {
         const visible = slide.id === active.id;
         return (
@@ -81,9 +82,15 @@ function HeroSlides() {
           </Link>
         );
       })}
-      <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/55 to-transparent p-4">
-        <p className="text-sm font-medium text-white">{active.name}</p>
+      <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/60 via-ink/15 to-transparent p-4">
+        <p className="text-sm font-medium tracking-wide text-white">{active.name}</p>
       </div>
+    </div>
+    {slides.length > 1 && !reducedMotion ? (
+      <div className="mt-3 h-px overflow-hidden bg-line" aria-hidden="true">
+        <span key={active.id} className="hero-progress block h-full w-full bg-wine" />
+      </div>
+    ) : null}
     </div>
   );
 }
@@ -92,28 +99,21 @@ export function Hero() {
   return (
     <section className="bg-white">
       <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_1.05fr] lg:py-16">
-        <div>
-          <p className="text-xs font-medium tracking-[0.18em] text-wine uppercase">SEMER</p>
+        <div className="hero-copy">
+          <p className="text-xs font-medium tracking-[0.22em] text-wine uppercase">SEMER</p>
           <h1 className="mt-3 max-w-xl text-5xl leading-[1.02] sm:text-6xl">
             Discover Beauty, Fashion &amp; Lifestyle
           </h1>
           <p className="mt-5 max-w-md text-base leading-7 text-muted">
-            Shop beauty and personal care, fashion, and lifestyle goods. Events are planned from an enquiry and
-            confirmed with a quote.
+            Shop beauty and personal care, fashion, and lifestyle goods.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               to="/shop"
-              className="inline-flex items-center justify-center rounded-full bg-wine px-5 py-3 text-sm font-medium text-paper hover:bg-wine-dark"
+              className="inline-flex items-center justify-center rounded-full bg-wine px-5 py-3 text-sm font-medium text-paper transition duration-200 hover:-translate-y-px hover:bg-wine-dark active:translate-y-0 active:scale-[0.98]"
             >
               Shop Now
             </Link>
-            <a
-              href="#services"
-              className="inline-flex items-center justify-center rounded-full border border-line bg-white px-5 py-3 text-sm font-medium hover:border-ink"
-            >
-              Explore Services
-            </a>
           </div>
         </div>
         <div className="relative">

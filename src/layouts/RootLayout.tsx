@@ -1,13 +1,15 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { Footer } from "../components/Footer.tsx";
 import { Navbar } from "../components/Navbar.tsx";
 import { Toast } from "../components/Toast.tsx";
 
 export function RootLayout() {
+  const location = useLocation();
+
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div className="flex min-h-screen flex-col">
       <Navbar />
-      <main className="flex-1">
+      <main key={location.pathname} className="page-in flex-1">
         <Outlet />
       </main>
       <Footer />

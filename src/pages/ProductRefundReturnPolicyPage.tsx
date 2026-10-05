@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { usePageTitle } from "../hooks/usePageTitle.ts";
-import { companyName } from "../utils/company.ts";
+import { companyEmail, companyName, companyPhone, companyPhoneHref } from "../utils/company.ts";
 
 const description = "Read SEMER's product refund, return, replacement and cancellation policy for customer orders.";
 
@@ -152,8 +152,20 @@ export function ProductRefundReturnPolicyPage() {
         <p className="mt-3 leading-7">SEMER</p>
         <p className="mt-3 leading-7">{companyName}</p>
         <p className="mt-3 leading-7">
-          The site does not publish a separate support email, phone number, or street address. Send a return request
-          from the <Link to="/contact" className="text-wine">contact page</Link>, including the details listed above.
+          Email:{" "}
+          <a href={`mailto:${companyEmail}`} className="break-all text-wine">
+            {companyEmail}
+          </a>
+        </p>
+        <p className="mt-3 leading-7">
+          Mobile:{" "}
+          <a href={companyPhoneHref} className="text-wine">
+            {companyPhone}
+          </a>
+        </p>
+        <p className="mt-3 leading-7">
+          Send a return request from the <Link to="/contact" className="text-wine">contact page</Link>, including the
+          details listed above.
         </p>
       </section>
     </article>

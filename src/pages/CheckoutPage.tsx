@@ -13,7 +13,6 @@ import { useToast } from "../hooks/useToast.ts";
 import { createOrder, getOrderQuote, type OrderQuote } from "../services/orders.ts";
 import { apiErrorMessage } from "../utils/errors.ts";
 import { formatPaise } from "../utils/money.ts";
-import { storeUpiId } from "../utils/order.ts";
 
 const emptyAddress = {
   address: "",
@@ -211,7 +210,7 @@ export function CheckoutPage() {
                 <span>
                   <span className="block text-sm font-medium">UPI</span>
                   <span className="mt-1 block text-sm text-muted">
-                    Pay to <span className="font-medium text-ink">{storeUpiId}</span>. The order stays pending until the payment is confirmed.
+                    Scan the QR code to pay. The order stays pending until the payment is confirmed.
                   </span>
                 </span>
               </label>

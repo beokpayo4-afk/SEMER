@@ -7,12 +7,12 @@ export function ContactCta() {
         <div>
           <h2 className="text-3xl text-paper sm:text-4xl">Get in touch</h2>
           <p className="mt-3 max-w-xl text-sm leading-6 text-paper/80 sm:text-base">
-            Ask about a product or an event. Send the details from the contact page and the team can reply.
+            Ask about a product. Send the details from the contact page and the team can reply.
           </p>
         </div>
         <Link
           to="/contact"
-          className="mt-6 inline-flex items-center justify-center rounded-full bg-paper px-5 py-2.5 text-sm font-medium text-ink md:mt-0"
+          className="mt-6 inline-flex items-center justify-center rounded-full bg-paper px-5 py-2.5 text-sm font-medium text-ink transition duration-200 hover:-translate-y-px hover:bg-white md:mt-0"
         >
           Contact us
         </Link>

@@ -3,6 +3,7 @@ import { Button } from "../components/Button.tsx";
 import { Input } from "../components/Input.tsx";
 import { usePageTitle } from "../hooks/usePageTitle.ts";
 import { useToast } from "../hooks/useToast.ts";
+import { companyEmail, companyPhone, companyPhoneHref } from "../utils/company.ts";
 
 export function ContactPage() {
   usePageTitle("Contact");
@@ -26,9 +27,27 @@ export function ContactPage() {
         <p className="text-xs tracking-[0.18em] text-muted uppercase">Contact</p>
         <h1 className="mt-3 text-4xl sm:text-5xl">Write to the team.</h1>
         <p className="mt-4 max-w-md leading-7 text-muted">
-          Use this for catalogue questions and event briefs. Delivery starts when the contact
+          Use this for catalogue questions. Delivery starts when the contact
           endpoint is available.
         </p>
+        <dl className="mt-8 space-y-4 text-sm">
+          <div>
+            <dt className="font-medium">Email</dt>
+            <dd className="mt-1">
+              <a href={`mailto:${companyEmail}`} className="break-all text-wine">
+                {companyEmail}
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt className="font-medium">Mobile</dt>
+            <dd className="mt-1">
+              <a href={companyPhoneHref} className="text-wine">
+                {companyPhone}
+              </a>
+            </dd>
+          </div>
+        </dl>
       </div>
       <form onSubmit={submit} className="space-y-4 rounded-3xl border border-line bg-white p-6">
         <Input label="Name" value={name} onChange={(event) => setName(event.target.value)} required />

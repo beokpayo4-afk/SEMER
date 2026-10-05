@@ -140,16 +140,18 @@ export function CatalogView({ title, intro, imageUrl, lockedCategoryId }: Catalo
                 <Link
                   key={category.id}
                   to={`/categories/${category.id}`}
-                  className="group overflow-hidden rounded-3xl border border-line bg-white"
+                  className="group relative block overflow-hidden rounded-3xl bg-sand"
                 >
-                  <div className="aspect-4/3 overflow-hidden bg-sand">
+                  <div className="aspect-4/3 overflow-hidden">
                     <ProductImage
                       src={category.image_url}
                       alt=""
-                      className="h-full w-full transition duration-300 group-hover:scale-[1.03]"
+                      className="h-full w-full transition duration-700 ease-out group-hover:scale-105"
                     />
                   </div>
-                  <p className="px-3 py-3 text-sm font-medium">{category.name}</p>
+                  <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/75 via-ink/20 to-transparent px-3 pt-8 pb-3">
+                    <p className="text-sm font-medium text-white">{category.name}</p>
+                  </div>
                 </Link>
               ))}
             </div>

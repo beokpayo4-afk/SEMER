@@ -12,7 +12,7 @@ export function Toast() {
           key={toast.id}
           type="button"
           onClick={() => dismissToast(toast.id)}
-          className="rounded-2xl bg-ink px-4 py-3 text-left text-sm text-paper shadow-lg"
+          className="toast-in rounded-2xl bg-ink px-4 py-3 text-left text-sm text-paper shadow-lg"
         >
           {toast.text}
         </button>

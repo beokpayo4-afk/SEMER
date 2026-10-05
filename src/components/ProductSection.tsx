@@ -60,7 +60,7 @@ export function ProductSection({
             <h2 className="text-3xl sm:text-4xl">{title}</h2>
             <p className="mt-3 max-w-2xl text-sm leading-6 text-muted sm:text-base">{intro}</p>
           </div>
-          <Link to={browseTo} className="text-sm text-wine">
+          <Link to={browseTo} className="view-all text-sm text-wine">
             View all
           </Link>
         </div>
@@ -75,15 +75,21 @@ export function ProductSection({
         {tiles.length > 0 ? (
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
             {tiles.map((category) => (
-              <Link key={category.id} to={`/categories/${category.id}`} className="group overflow-hidden rounded-3xl border border-line bg-white">
-                <div className="aspect-4/3 overflow-hidden bg-sand">
+              <Link
+                key={category.id}
+                to={`/categories/${category.id}`}
+                className="group relative block overflow-hidden rounded-3xl bg-sand shadow-[0_10px_30px_rgba(28,25,23,0.06)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(28,25,23,0.12)]"
+              >
+                <div className="aspect-4/3 overflow-hidden">
                   <ProductImage
                     src={category.image_url}
                     alt=""
-                    className="h-full w-full transition duration-300 group-hover:scale-[1.03]"
+                    className="h-full w-full transition duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
-                <p className="px-3 py-3 text-sm font-medium">{category.name}</p>
+                <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/75 via-ink/20 to-transparent px-4 pt-10 pb-4">
+                  <p className="text-sm font-medium text-white">{category.name}</p>
+                </div>
               </Link>
             ))}
           </div>

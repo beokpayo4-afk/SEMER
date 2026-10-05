@@ -17,7 +17,7 @@ const paymentLabels: Record<PaymentStatus, string> = {
   REFUNDED: "Refunded",
 };
 
-export const storeUpiId = "kkumar41831@ibl";
+export const storeUpiId = "9707177156@idfcfirst";
 
 export function upiPayLink(amountPaise: number) {
   const amount = (amountPaise / 100).toFixed(2);

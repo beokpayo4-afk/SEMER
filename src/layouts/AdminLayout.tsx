@@ -10,8 +10,6 @@ const links = [
   { to: "/admin/orders", label: "Orders" },
   { to: "/admin/customers", label: "Customers" },
   { to: "/admin/payments", label: "Payments" },
-  { to: "/admin/events", label: "Events" },
-  { to: "/admin/event-enquiries", label: "Event enquiries" },
   { to: "/admin/reviews", label: "Reviews" },
   { to: "/admin/coupons", label: "Coupons" },
   { to: "/admin/settings", label: "Settings" },
