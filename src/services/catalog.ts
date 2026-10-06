@@ -26,9 +26,29 @@ function once<T>(key: string, load: () => Promise<T>): Promise<T> {
   return request;
 }
 
+const categoryCacheKey = "semer_categories";
+
+export function readCachedCategories() {
+  try {
+    const raw = localStorage.getItem(categoryCacheKey);
+    if (!raw) {
+      return null;
+    }
+    const parsed: unknown = JSON.parse(raw);
+    return Array.isArray(parsed) ? (parsed as Category[]) : null;
+  } catch {
+    return null;
+  }
+}
+
 export async function getCategories() {
   return once("categories", async () => {
     const { data } = await api.get<Category[]>("/api/categories");
+    try {
+      localStorage.setItem(categoryCacheKey, JSON.stringify(data));
+    } catch {
+      // The page still works if the browser refuses storage.
+    }
     return data;
   });
 }

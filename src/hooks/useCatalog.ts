@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getCategories, getCategory, getProduct, getProducts } from "../services/catalog.ts";
+import { getCategories, getCategory, getProduct, getProducts, readCachedCategories } from "../services/catalog.ts";
 import type { Category, Product, ProductPage, ProductQuery } from "../services/types.ts";
 import { apiErrorMessage } from "../utils/errors.ts";
 import { isUuid } from "../utils/product.ts";
@@ -62,7 +62,15 @@ function useRequest<T>(key: string, load: (activeKey: string) => Promise<T>, fal
 }
 
 export function useCategories() {
-  return useRequest<Category[]>("categories", loadCategories, "Categories could not be loaded.");
+  const request = useRequest<Category[]>("categories", loadCategories, "Categories could not be loaded.");
+  const [cached] = useState(readCachedCategories);
+  if (request.data) {
+    return request;
+  }
+  if (cached && cached.length > 0) {
+    return { data: cached, loading: false, error: null };
+  }
+  return request;
 }
 
 export function useCategory(id: string | undefined) {
